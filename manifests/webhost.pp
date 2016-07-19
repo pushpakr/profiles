@@ -1,4 +1,12 @@
-class profiles::webhost {
+class profiles::webhost
+(
+$docroot         = '/var/www',
+$port            = '9090',
+$docroot_owner   = 'root',
+$docroot_group   = 'root',
+$servername      = 'puppet.india.xoriantcorp.com',
+)
+ {
  class { 'apache': }
   apache::vhost { 'first.example.com':
     port    => '8010',
